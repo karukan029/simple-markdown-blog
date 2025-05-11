@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
+import { Metadata, PageProps } from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/icons';
 import { getPostBySlug, getAllPosts } from '@/lib/blog';
 
-interface PostPageProps {
+type PostPageProps = {
   params: {
     slug: string;
   };

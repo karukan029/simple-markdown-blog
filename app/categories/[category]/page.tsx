@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
+import { Metadata, PageProps } from 'next';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/icons';
 import { getAllCategories, getPostsByCategory } from '@/lib/blog';
 
-interface CategoryPageProps {
+type CategoryPageProps = {
   params: {
     category: string;
   };

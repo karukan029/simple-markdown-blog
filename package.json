@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "workers:dev": "npx wrangler dev",
+    "workers:deploy": "npx wrangler deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -70,5 +73,9 @@
     "typescript": "5.4.2",
     "vaul": "^0.9.0",
     "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.12",
+    "wrangler": "^4.14.1"
   }
 }
