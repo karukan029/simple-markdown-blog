@@ -58,6 +58,7 @@ export default async function Home() {
                     alt={post.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    unoptimized
                   />
                 </div>
                 <CardHeader className="p-4">

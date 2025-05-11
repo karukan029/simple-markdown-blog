@@ -2,11 +2,17 @@
 const nextConfig = {
   images: {
     domains: ['images.pexels.com'],
-    remotePatterns: [new URL('https://images.pexels.com/photos/1181271/**')],
-    unoptimized: process.env.NODE_ENV === 'production' && process.env.CF_PAGES === '1',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        pathname: '/**',
+      },
+    ],
+    unoptimized: true, // Always unoptimize for Cloudflare Pages
   },
-  // Optimize for Cloudflare Workers
-  output: 'standalone',
+  // Optimize for Cloudflare Pages
+  output: 'export',
   // Disable ESLint during build to avoid issues with apostrophes
   eslint: {
     ignoreDuringBuilds: true,
@@ -15,6 +21,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Ensure static HTML export for Cloudflare Pages
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;

@@ -84,6 +84,7 @@ export default async function PostPage({ params }: PostPageProps) {
               fill
               className="object-cover"
               priority
+              unoptimized
             />
           </div>
         </div>
